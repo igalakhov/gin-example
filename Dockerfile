@@ -8,6 +8,8 @@ RUN apk update && apk add gcc musl-dev
 
 COPY . .
 
+RUN ls
+
 RUN go mod download
 
 RUN go build -ldflags '-w -s' -a -o ./bin/porter-gin-example .
